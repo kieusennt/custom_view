@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+  <t t-name="custom_view_template" owl="1">
+	 <div id="layout_custom_view" style="height: 100%;"/>
+  </t>
+</templates>

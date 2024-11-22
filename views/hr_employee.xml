@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="custom_view_inherit_hr_form_form" model="ir.ui.view">
+		<field name="name">custom_view_inherit_hr_form_form</field>
+		<field name="model">hr.employee</field>
+		<field name="inherit_id" ref="hr.view_employee_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//page[@name='public']" position="before">
+				<page string="Custom Area" name="employee_custom_area">
+					<div class="employee_custom_area"/>
+				</page>
+			</xpath>
+		</field>
+	</record>
+
+	<record id="employee_custom_gantt_view" model="ir.ui.view">
+		<field name="name">employee_gantt_view</field>
+		<field name="model">hr.employee</field>
+		<field name="arch" type="xml">
+			<gantt_view/>
+		</field>
+	</record>
+
+	<record id="employee_add_gantt_view" model="ir.actions.act_window.view">
+		<field name="sequence" eval="1"/>
+		<field name="view_mode">gantt_view</field>
+		<field name="view_id" ref="employee_custom_gantt_view"/>
+		<field name="act_window_id" ref="hr.open_view_employee_list_my"/>
+	</record>
+
+</odoo>

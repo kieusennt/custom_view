@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="department_custom_gantt_view" model="ir.ui.view">
+		<field name="name">department_custom_gantt_view</field>
+		<field name="model">hr.department</field>
+		<field name="arch" type="xml">
+			<gantt_view/>
+		</field>
+	</record>
+
+	<record id="department_add_gantt_view" model="ir.actions.act_window.view">
+		<field name="sequence" eval="1"/>
+		<field name="view_mode">gantt_view</field>
+		<field name="view_id" ref="department_custom_gantt_view"/>
+		<field name="act_window_id" ref="hr.hr_department_kanban_action"/>
+	</record>
+
+</odoo>
